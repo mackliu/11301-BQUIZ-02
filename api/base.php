@@ -131,3 +131,6 @@ function dd($array)
     print_r($array);
     echo "</pre>";
 }
+
+
+$User = new DB("users");
