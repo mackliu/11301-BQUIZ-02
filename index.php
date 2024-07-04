@@ -43,7 +43,18 @@
 					<span style="width:18%; display:inline-block;">
 						<a href="?do=login">會員登入</a>
 					</span>
-					<div class="">
+					<div class="content">
+						<?php
+						$do = $_GET['do'] ?? 'main';
+						$file = "./frontend/{$do}.php";
+						if (file_exists($file)) {
+							include $file;
+						} else {
+							include "./frontend/main.php";
+						}
+
+
+						?>
 					</div>
 				</div>
 			</div>
