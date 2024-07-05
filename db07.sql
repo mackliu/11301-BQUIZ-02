@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-04 04:40:43
+-- 產生時間： 2024-07-05 02:42:42
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.0.30
 
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `total`
+--
+
+CREATE TABLE `total` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `date` date NOT NULL,
+  `total` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `total`
+--
+
+INSERT INTO `total` (`id`, `date`, `total`) VALUES
+(1, '2024-07-05', 4),
+(2, '2024-07-06', 1);
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `users`
 --
 
@@ -40,13 +60,19 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `acc`, `pw`, `email`) VALUES
 (1, 'admin', '1234', 'admin@labor.gov.tw'),
-(2, 'test', '5678', 'test@labor.gov.tw'),
 (3, 'mem01', 'mem01', 'mem01@labor.gov.tw'),
-(4, 'mem02', 'mem02', 'mem02@labor.gov.tw');
+(4, 'mem02', 'mem02', 'mem02@labor.gov.tw'),
+(9, '31321', '123', 'daffsdaf');
 
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `total`
+--
+ALTER TABLE `total`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 資料表索引 `users`
@@ -59,10 +85,16 @@ ALTER TABLE `users`
 --
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `total`
+--
+ALTER TABLE `total`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
