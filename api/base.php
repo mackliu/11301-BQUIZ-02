@@ -135,7 +135,7 @@ function dd($array)
 
 $User = new DB("users");
 $Total = new DB("total");
-
+$News = new DB('news');
 
 
 if (!isset($_SESSION['total'])) {
