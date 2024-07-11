@@ -21,7 +21,7 @@ function lo(th,url)
 }
  */
 function clean(){
-	console.log("clean")
+
 	$("input[type='text'],input[type='password']").val("")
 	$("input[type='checkbox']").prop('checked',false)
 }
